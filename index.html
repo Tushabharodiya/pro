@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" name="role" id="role">
+    <input type="email" name="name" id="email">
+    <input type="password" name="Password" id="password">
+    <button onclick="logindata()">Login</button>
+    <script>
+
+        let logindata = () => {
+            let role = ["admin", "user"];
+            let email = "tushabharodiya@gmail.com";
+            let pass = 123;
+
+            let rolee = document.getElementById("role").value;
+            let user = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+
+            if (role.includes(rolee)) {
+                if (rolee === "admin" && user == email && password == pass) {
+                    console.log("you login admin");
+                    location.href = "./code/admin.html"
+                } else if (rolee === "user" && user == email && password == pass) {
+                    console.log("you login user");
+                    location.href = "./code/products.html"
+                }
+                else {
+                    console.log("plz ! Enter Valid Details");
+
+                }
+            }
+            else {
+                console.log("you are not eligable");
+            }
+        }
+    </script>
+</body>
+
+</html>
